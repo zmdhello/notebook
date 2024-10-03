@@ -70,6 +70,12 @@ webui-user.bat和webui-user.sh中加参数
 COMMANDLINE_ARGS="--skip-torch-cuda-test --precision full --no-half"
 
 有个python包版本太高还降低了版本
+'''
+I inserted it in this line of the Dockerfile and it is working in my environment.
+https://github.com/AbdBarho/stable-diffusion-webui-docker/blob/master/services/AUTOMATIC1111/Dockerfile#L41
+Inserted are the following
+RUN --mount=type=cache,target=/root/.cache/pip \
+'''这句不知道位置在哪里，我没去找，直接在powershell里复制下面的安装卸载
 pip uninstall -y typing_extensions
 pip install typing_extensions==4.11.0
 不知道有没有用，反正操作了，最后的结果是好的，

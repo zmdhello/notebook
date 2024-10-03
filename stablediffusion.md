@@ -72,7 +72,9 @@ COMMANDLINE_ARGS="--skip-torch-cuda-test --precision full --no-half"
 有个python包版本太高还降低了版本
 pip uninstall -y typing_extensions
 pip install typing_extensions==4.11.0
-不知道有没有用，反正操作了，最后的结果是好的，不出意外，一张图很慢，出图怎么样跟大模型有关，要整理一下自己需要什么风格，挂载哪款大模型
+不知道有没有用，反正操作了，最后的结果是好的，
+折腾了好几天，这个流程是出的问题最少，最好解决的。。。
+不出意外，一张图很慢，出图怎么样跟大模型有关，要整理一下自己需要什么风格，挂载哪款大模型
 
 
 

@@ -44,28 +44,42 @@ cd stable-diffusion-webui-docker
 
 # 自动下载采样模型和依赖包
 docker compose --profile download up --build
-# 上方命令需要 20 分钟或更长，完成后执行镜像构建命令
-
-docker compose --profile auto up --build
-# auto 是功能最多的分支，可以选择 auto | auto-cpu | comfy | comfy-cpu
-docker compose --profile auto-cpu up --build
-docker compose --profile comfy up --build
-docker compose --profile comfy-cpu up --build
-#我需要选择的就是auto-cpu或者comfy-cpu的命令，实践证明comfy-cpu最顺利，是文字生图版本
+# 上方命令需要 20 分钟或更长，
 
 7.安装windows下使用cpu进行运算的pytorch版本
 
 pip3 install torch torchvision torchaudio 
-
 取决于网络情况，这里可能需要等待较长时间 
 
+完成后执行镜像构建命令
+运行 UI
+虽然是运行ui，但脚本里依然有大量内容需要下载
+
+需要确保网络正常，最好通过全局代理
+
+第一次启动大约 15 分钟时间
+
+docker compose --profile auto up --build
+# auto 是功能最多的分支，可以选择 auto | auto-cpu | comfy | comfy-cpu
+# docker compose --profile auto-cpu up --build
+docker compose --profile comfy up --build
+# docker compose --profile comfy-cpu up --build
+# 我需要选择的就是auto-cpu或者comfy-cpu的命令，实践证明comfy-cpu最顺利，是文字生图版本
+
 模型文件（stable-diffusion、waifu-diffusion等ckpt文件）复制到stable-diffusion-webui\models\Stable-diffusion目录下 
+
+打开界面
+本地打开： http://localhost:7860/
+
 
 # 遇到的问题
 webui-user.bat和webui-user.sh中加参数
 COMMANDLINE_ARGS="--skip-torch-cuda-test --precision full --no-half"
 
 有个python包版本太高还降低了版本
+pip uninstall -y typing_extensions
+pip install typing_extensions==4.11.0
+不知道有没有用，反正操作了，最后的结果是好的
 
 
 

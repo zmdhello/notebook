@@ -22,3 +22,5 @@ setx OLLAMA_MODELS "D:\ollama_model"
 可以看到目前你下载的所有模型
 
 第三步，DeepSeek-r1:1.5b接入到PyCharm。首先下载插件：CodeGPT，打开第一步安装的PyCharm，找到文件(File)-设置(Settings)-插件(Plugins)，输入CodeGPT，即可点击安装(Install)即可
+
+去docker，打开lobe chat ai， 设置deepseek，开始聊天
